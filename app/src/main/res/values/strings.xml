@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SQLiteDemo1</string>
+    <string name="hint_patient_name">Patient Name</string>
+    <string name="label_gender">Gender</string>
+    <string name="rb_male">Male</string>
+    <string name="rb_female">Female</string>
+    <string name="hint_mobile_number">Mobile Number</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_show_all">Show All</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="hint_doctor_name">Doctor Name</string>
+    <string name="btn_add_doctor">Add Doctor</string>
+    <string name="btn_select_patient">Select patient</string>
+    <string name="btn_select_doctor">Selcet Doctor</string>
+    <string name="btn_create_appointment">Create Appointment</string>
+    <string name="btn_new_apt">New Appointment</string>
+    <string name="btn_all_apts">All Appointments</string>
+</resources>

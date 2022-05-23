@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/common_padding"
+    tools:context=".NewAppointmentActivity">
+
+    <Button
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/btn_select_patient"
+        android:text="@string/btn_select_patient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_selected_patient"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_select_patient"
+        app:layout_constraintBottom_toBottomOf="@id/btn_select_patient"
+        app:layout_constraintTop_toTopOf="@id/btn_select_patient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_patient"
+        android:id="@+id/btn_select_doctor"
+        android:text="@string/btn_select_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_selected_doctor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_select_doctor"
+        app:layout_constraintBottom_toBottomOf="@id/btn_select_doctor"
+        app:layout_constraintTop_toTopOf="@id/btn_select_doctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <CalendarView
+        android:id="@+id/cv_calendar"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TimePicker
+        android:id="@+id/tp_time"
+        app:layout_constraintTop_toBottomOf="@id/cv_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tp_time"
+        android:text="@string/btn_create_appointment"
+        android:id="@+id/btn_create_apt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
