@@ -7,7 +7,7 @@ import com.aapolis.sqlitedemo1.R
 import com.aapolis.sqlitedemo1.data.Patient
 import com.aapolis.sqlitedemo1.viewholders.PatientViewHolder
 
-class PatientAdapter(val patients: List<Patient>): RecyclerView.Adapter<PatientViewHolder>() {
+class PatientAdapter(val patients: List<Patient>) : RecyclerView.Adapter<PatientViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.view_holder_patient, parent, false)
@@ -16,19 +16,41 @@ class PatientAdapter(val patients: List<Patient>): RecyclerView.Adapter<PatientV
 
     override fun onBindViewHolder(holder: PatientViewHolder, position: Int) {
         holder.setData(patients[position])
-        if(this::deleteClickListener.isInitialized) {
-            holder.btnDelete.setOnClickListener{
+
+        holder.ivMore.setOnClickListener {
+            holder.popupMenu.show()
+        }
+
+        holder.popupMenu.setOnMenuItemClickListener {
+            when (it.title) {
+                "Edit" -> {
+                    if (this::editClickListener.isInitialized) {
+                        editClickListener(patients[position], position)
+                    }
+                }
+                "Delete" -> {
+                    if (this::deleteClickListener.isInitialized) {
+                        deleteClickListener(patients[position], position)
+                    }
+                }
+            }
+            true
+        }
+
+        /*if (this::deleteClickListener.isInitialized) {
+            holder.btnDelete.setOnClickListener {
                 deleteClickListener(patients[position], position)
             }
         }
 
-        if(this::editClickListener.isInitialized) {
-            holder.btnEdit.setOnClickListener{
+
+        if (this::editClickListener.isInitialized) {
+            holder.btnEdit.setOnClickListener {
                 editClickListener(patients[position], position)
             }
-        }
+        }*/
 
-        if(this::patientSelectedListener.isInitialized) {
+        if (this::patientSelectedListener.isInitialized) {
             holder.itemView.setOnClickListener {
                 patientSelectedListener(patients[position], position)
             }

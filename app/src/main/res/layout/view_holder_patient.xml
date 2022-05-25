@@ -12,11 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:id="@+id/tv_name"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_more"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_more" />
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@+id/tv_name"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_toStartOf="@id/iv_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
         <TextView
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -34,6 +47,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:visibility="gone"
                 android:src="@drawable/ic_delete"
                 android:id="@+id/btn_delete"
                 android:layout_width="32dp"
@@ -43,12 +57,14 @@
                 android:text="@string/btn_delete" />
 
             <ImageView
+                android:visibility="gone"
                 android:id="@+id/btn_edit"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_edit"
                 android:layout_toStartOf="@id/btn_delete"
                 android:text="Edit" />
+
 
         </RelativeLayout>
     </LinearLayout>
